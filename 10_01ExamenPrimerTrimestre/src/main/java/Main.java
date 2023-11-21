@@ -18,6 +18,7 @@ public class Main {
 		Connection conexion = BD.getConnection();
 		Agenda agenda = new Agenda();
 		ArrayList<Contacto> hola = new ArrayList<Contacto>();
+		Integer num = 0;
 		
 		String SQL = """
 				SELECT * FROM agenda
@@ -26,6 +27,7 @@ public class Main {
 			ResultSet rs = conexion.createStatement().executeQuery(SQL);
 			
 			while(rs.next()) {
+				num++;
 				String sUuid = rs.getString("uuid");
 				UUID uuid = UUID.fromString(sUuid);
 				String nombre = rs.getString("nombre");
@@ -35,6 +37,7 @@ public class Main {
 			}
 			
 			agenda.setContactos(hola);
+			agenda.setNumContacts(num);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
