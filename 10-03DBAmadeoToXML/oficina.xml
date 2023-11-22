@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:oficina xmlns:ns2="org.oficina">
+    <departamentos>
+        <departamento>
+            <id>1</id>
+            <jefe>
+                <id>0</id>
+            </jefe>
+            <nombre>informatica</nombre>
+        </departamento>
+    </departamentos>
+    <empleados>
+        <empleado>
+            <departamento>
+                <id>0</id>
+            </departamento>
+            <id>1</id>
+            <nacido/>
+            <nombre>lucas</nombre>
+            <salario>123123.0</salario>
+        </empleado>
+        <empleado>
+            <departamento>
+                <id>0</id>
+            </departamento>
+            <id>2</id>
+            <nacido/>
+            <nombre>pablo</nombre>
+            <salario>3453.0</salario>
+        </empleado>
+    </empleados>
+</ns2:oficina>
