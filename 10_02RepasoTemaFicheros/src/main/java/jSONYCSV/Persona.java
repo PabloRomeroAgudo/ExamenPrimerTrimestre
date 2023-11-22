@@ -1,4 +1,4 @@
-package jSON;
+package jSONYCSV;
 
 public class Persona {
 	private String nombre;

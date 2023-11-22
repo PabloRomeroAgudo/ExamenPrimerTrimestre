@@ -1,4 +1,4 @@
-package jSON;
+package jSONYCSV;
 
 import java.util.List;
 
@@ -21,6 +21,11 @@ public class Agenda {
 
 	public void setNumContactos(Integer numContactos) {
 		this.numContactos = numContactos;
+	}
+
+	@Override
+	public String toString() {
+		return "Agenda [contactos=" + contactos + ", numContactos=" + numContactos + "]";
 	}
 	
 	
