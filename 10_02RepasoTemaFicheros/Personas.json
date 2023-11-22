@@ -1,0 +1,17 @@
+{
+  "contactos": [
+    {
+      "nombre": "Pablo",
+      "edad": 29
+    },
+    {
+      "nombre": "Navarro",
+      "edad": 28
+    },
+    {
+      "nombre": "Lucas",
+      "edad": 35
+    }
+  ],
+  "numContactos": 3
+}
