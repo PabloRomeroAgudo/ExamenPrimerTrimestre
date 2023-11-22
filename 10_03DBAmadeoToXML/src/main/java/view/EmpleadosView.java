@@ -16,6 +16,7 @@ public class EmpleadosView {
 			"Añadir",
 			"modiFicar",
 			"Eliminar",
+			"Escribir JSON",
 			"Salir");
 	
 	public Character getOption() {

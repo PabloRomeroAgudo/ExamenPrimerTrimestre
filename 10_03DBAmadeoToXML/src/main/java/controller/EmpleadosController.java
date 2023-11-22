@@ -41,6 +41,9 @@ public class EmpleadosController {
 			case 'E':
 				delete();
 				break;
+			case 'J':
+				escribirJSON();
+				break;
 			case 'S':
 				return;
 			default:
@@ -99,5 +102,12 @@ public class EmpleadosController {
 			borrado = dao.delete(id);
 		}
 		view.result(borrado ? "Borrado" : "No se ha podido borrar");
+	}
+	
+	// borrar el localeDate ya que peta xq no sabe como escribirlo
+	private void escribirJSON() {
+		boolean escrito = dao.escribirJSON();
+		
+		view.result(escrito ? "Escrito" : "No se ha podido escribir");
 	}
 }

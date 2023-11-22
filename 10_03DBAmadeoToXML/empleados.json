@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombre": "lucas",
+    "salario": 123123.0,
+    "departamento": {
+      "id": 0
+    }
+  },
+  {
+    "id": 2,
+    "nombre": "pablo",
+    "salario": 3453.0,
+    "departamento": {
+      "id": 0
+    }
+  }
+]

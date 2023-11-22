@@ -15,7 +15,8 @@ public class Empleado {
 	
 	Integer id; 
 	String nombre; 
-	Double salario; 
+	Double salario;
+	// borrar el localeDate ya que peta xq no sabe como escribirlo EL JSON
 	LocalDate nacido;
 	Departamento departamento;
 

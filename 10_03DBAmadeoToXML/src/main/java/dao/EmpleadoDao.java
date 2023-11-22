@@ -1,5 +1,7 @@
 package dao;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,10 +10,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.JAXBException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import model.Departamento;
 import model.Empleado;
-import model.Oficina;
 import util.Util;
 
 public class EmpleadoDao {
@@ -28,9 +31,7 @@ public class EmpleadoDao {
 				FROM empleado e
 					LEFT JOIN departamento d ON e.departamento = d.id
 			""";
-	
-	private JaxbController controller = JaxbController.getInstance();
-	private final static String FILE = "empleados.xml";
+	private final static String FILE = "empleados.json";
 
 	/**
 	 * Constructor
@@ -196,20 +197,21 @@ public class EmpleadoDao {
 		return false;
 	}
 	
-	public Boolean writeToXML() {
+	// borrar el localeDate ya que peta xq no sabe como escribirlo
+	public boolean escribirJSON() {
+		GsonBuilder builder = new GsonBuilder().setPrettyPrinting();
+		Gson gson = builder.create();
 		List<Empleado> lista = findAll();
-		Oficina oficina = new Oficina();
-		oficina.setEmpleados(lista);
+		
 		try {
-			controller.objectToXML(oficina);
-			controller.writeXMLFile(FILE);
-			
+			FileWriter fichero = new FileWriter(FILE);
+			fichero.write(gson.toJson(lista));
+			fichero.close();
 			return true;
-		} catch (JAXBException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
 		}
-		
 	}
 
 	/**
